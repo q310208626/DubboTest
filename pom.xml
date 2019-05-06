@@ -36,13 +36,14 @@
             <version>1.2.17</version>
         </dependency>
 
-        <!-- https://mvnrepository.com/artifact/io.netty/netty-all -->
+        <!--dubbo 底层依赖netty-->
         <dependency>
             <groupId>io.netty</groupId>
             <artifactId>netty-all</artifactId>
             <version>4.1.34.Final</version>
         </dependency>
 
+        <!--dubbo连接zookeeper时，用到了curator，简化了客户端对zk的操作-->
         <!-- https://mvnrepository.com/artifact/org.apache.curator/curator-recipes -->
         <dependency>
             <groupId>org.apache.curator</groupId>
