@@ -6,27 +6,15 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
         http://dubbo.apache.org/schema/dubbo http://dubbo.apache.org/schema/dubbo/dubbo.xsd
         http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
-
-    <!--spring注解方式 @Compoment-->
     <context:component-scan base-package="com.lsj.test.provider"></context:component-scan>
 
-    <!--dubbo注解方式 @Service-->
-    <!--<dubbo:annotation package="com.lsj.test.provider"></dubbo:annotation>-->
-
-    <!--应用名称-->
+    <dubbo:annotation package="com.lsj.test.provider"></dubbo:annotation>
     <dubbo:application name="demo-provider"/>
-
-    <!--多个zookeeper地址-->
     <dubbo:registry address="zookeeper://127.0.0.1:2181"/>
     <dubbo:registry address="zookeeper://127.0.0.1:2182"/>
     <dubbo:registry address="zookeeper://127.0.0.1:2183"/>
-
-    <!--dubbo服务监听地址-->
-    <dubbo:protocol name="dubbo" port="20880"/>
-
-    <!--spring配置接口-->
-    <bean id="demoService" class="com.lsj.test.provider.DemoServiceImpl"/>
-
-    <!--dubbo配置服务，可以通过注解方式-->
-    <dubbo:service interface="com.lsj.test.api.DemoService" ref="demoService"/>
+    <dubbo:protocol name="dubbo" port="20881"/>
+    <!-- service implementation, as same as regular local bean -->
+    <!--<bean id="demoService" class="com.lsj.test.provider.DemoServiceImpl"/>-->
+    <!--<dubbo:service interface="com.lsj.test.api.DemoService" ref="demoService"/>-->
 </beans>
